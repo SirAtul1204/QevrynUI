@@ -65,7 +65,14 @@ Build results live in `packages/ui/dist` and `apps/preview/dist`. Generated file
 
 ## Use in another project
 
-This package is **not published to npm yet**. Build and pack it locally:
+Install the library in a React project:
+
+```sh
+npm install @qevryn/ui
+# or: pnpm add @qevryn/ui
+```
+
+For a local archive instead, build and pack it:
 
 ```sh
 pnpm pack:ui
@@ -216,6 +223,20 @@ Public color tokens: `--qv-canvas`, `--qv-surface`, `--qv-control`, `--qv-foregr
 
 Tests cover native form values/reset, controlled switching and radio selection, mixed checkboxes, loading clicks, refs, accordion keyboard navigation and controlled/multiple states, dropdown selection/Escape and nested-theme portals, chip toggling/removal, nested themes, separators, class overrides, and structural accessibility. jsdom tests do not measure rendered color contrast.
 
-Later additions can include searchable comboboxes, action menus, tooltips, dialogs, tabs, and a separate composed-components package. Registry publication and license selection are not configured yet.
+Later additions can include searchable comboboxes, action menus, tabs, and a separate composed-components package. The library is MIT licensed.
+
+## Publishing a release
+
+The public package is `@qevryn/ui`; the root workspace and preview app remain private. Only the library's compiled output, TypeScript declarations, README, package metadata, and license are included in the archive.
+
+Update `packages/ui/package.json` to a new version, update the changelog, commit the release, then run:
+
+```sh
+npm login
+pnpm check
+pnpm --filter @qevryn/ui publish --access public
+```
+
+The prepack step builds the library before publishing. npm may require browser authorization or two-factor verification. Never commit npm tokens. Each published version is immutable; use a new version number for subsequent releases.
 
 Architecture references: [Turborepo task configuration](https://turborepo.dev/docs/crafting-your-repository/configuring-tasks), [Tailwind with Vite](https://tailwindcss.com/docs/installation/using-vite), [Vite library mode](https://vite.dev/guide/build#library-mode), [Radix Accordion](https://www.radix-ui.com/primitives/docs/components/accordion).

@@ -2,6 +2,13 @@
 
 Prism Satin React components, built with TypeScript and Tailwind CSS. Dark first, with light and system themes.
 
+```sh
+npm install @qevryn/ui
+# or: pnpm add @qevryn/ui
+```
+
+[Live preview](https://qevryn-ui-preview.vercel.app) · [Source](https://github.com/SirAtul1204/QevrynUI) · [Issues](https://github.com/SirAtul1204/QevrynUI/issues)
+
 ```tsx
 import { Button, ThemeProvider } from '@qevryn/ui';
 import '@qevryn/ui/styles.css';
@@ -17,7 +24,7 @@ Use `theme="light"` or `theme="system"` on ThemeProvider. Components forward ref
 
 React 18 or 19 and React DOM are required. The exported CSS is precompiled, uses prefixed utility classes, and omits global preflight; consuming apps do not need Tailwind. Import it once. Scope components inside ThemeProvider, supply accessible labels for form controls, and connect helper/error text with `aria-describedby`.
 
-Set `className` for styling overrides or customize the `--qv-*` theme tokens. ES module, CommonJS, and TypeScript declaration exports are included. The package is currently for local installation and has not been published to a registry.
+Set `className` for styling overrides or customize the `--qv-*` theme tokens. ES module, CommonJS, and TypeScript declaration exports are included. Licensed under MIT.
 
 RadioGroup uses `value`/`onValueChange` or `defaultValue`; give it a name for form submission and label each RadioGroupItem. Checkbox keeps native input props and supports `indeterminate`; CheckboxGroup supplies a fieldset and legend. Dropdown is a themed single-value select with keyboard navigation, typeahead, disabled options, and portals inside the nearest theme boundary. Use the native Select when platform controls are preferred.
 
