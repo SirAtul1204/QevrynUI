@@ -1,0 +1,15 @@
+node_modules/
+.vercel/
+.turbo/
+.pnpm-store/
+dist/
+preview-dist/
+coverage/
+artifacts/
+*.tgz
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+.DS_Store
+

@@ -1,0 +1,56 @@
+@layer components {
+  .q-message {
+    --q-message-accent: var(--qv-info);
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid color-mix(in srgb, var(--q-message-accent) 40%, var(--qv-border));
+    border-radius: 16px;
+    color: var(--qv-foreground);
+    background: linear-gradient(115deg, color-mix(in srgb, var(--q-message-accent) 8%, var(--qv-surface)), var(--qv-surface) 75%);
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--q-message-accent) 8%, transparent);
+    overflow-wrap: anywhere;
+  }
+  .q-message[data-variant="success"] { --q-message-accent: var(--qv-success); }
+  .q-message[data-variant="error"] { --q-message-accent: var(--qv-danger); }
+  .q-message[data-variant="warning"] { --q-message-accent: var(--qv-warning); }
+  .q-message[data-variant="info"] { --q-message-accent: var(--qv-info); }
+  .q-message[data-appearance="outline"] { background: var(--qv-control); box-shadow: none; }
+  .q-message::before {
+    content: '';
+    position: absolute;
+    inset: 16px auto 16px 0;
+    width: 2px;
+    border-radius: 2px;
+    background: var(--q-message-accent);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--q-message-accent) 25%, transparent);
+  }
+  .q-message-icon { display: flex; align-items: center; justify-content: center; flex: 0 0 36px; height: 36px; border-radius: 11px; color: var(--q-message-accent); background: color-mix(in srgb, var(--q-message-accent) 11%, var(--qv-control)); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--q-message-accent) 22%, transparent); }
+  .q-message-body { display: flex; flex: 1; flex-direction: column; min-width: 0; gap: 5px; }
+  .q-message:has(.q-message-close) .q-message-body { padding-inline-end: 28px; }
+  .q-message-title { font-size: 14px; font-weight: 600; line-height: 1.5; }
+  .q-message-description { color: var(--qv-muted); font-size: 13px; line-height: 1.6; }
+  .q-message-close { position: absolute; top: 12px; right: 12px; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; width: 28px; height: 28px; padding: 0; border: 0; border-radius: 8px; color: var(--qv-muted); background: transparent; cursor: pointer; }
+  .q-message-close:hover { color: var(--qv-foreground); background: color-mix(in srgb, var(--q-message-accent) 12%, transparent); }
+  .q-message-close:disabled, .q-message-action:disabled { opacity: 0.45; cursor: not-allowed; }
+  .q-message-action { align-self: flex-start; display: inline-flex; align-items: center; justify-content: center; min-height: 32px; margin-top: 5px; padding: 4px 10px; border: 1px solid color-mix(in srgb, var(--q-message-accent) 45%, var(--qv-border)); border-radius: 8px; color: var(--q-message-accent); background: transparent; font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; }
+  .q-message-action:hover { background: color-mix(in srgb, var(--q-message-accent) 10%, transparent); }
+  .q-toast { box-shadow: 0 12px 36px var(--qv-shadow), inset 0 1px 0 color-mix(in srgb, var(--q-message-accent) 12%, transparent); list-style: none; flex-shrink: 0; }
+  .q-toast[data-state="open"] { animation: q-toast-enter 180ms ease-out; }
+  .q-toast[data-swipe="move"] { transform: translate(var(--radix-toast-swipe-move-x), var(--radix-toast-swipe-move-y)); }
+  .q-toast[data-swipe="cancel"] { transform: translate(0, 0); transition: transform 180ms ease-out; }
+  .q-toast-viewport { position: fixed; z-index: 100; display: flex; flex-direction: column; gap: 12px; box-sizing: border-box; width: min(24rem, calc(100vw - 24px)); max-height: calc(100dvh - 32px); margin: 0; padding: 4px; list-style: none; overflow-y: auto; overscroll-behavior: contain; outline: none; }
+  .q-toast-viewport[data-position^="bottom"] { bottom: max(12px, env(safe-area-inset-bottom)); }
+  .q-toast-viewport[data-position^="top"] { top: max(12px, env(safe-area-inset-top)); }
+  .q-toast-viewport[data-position$="right"] { right: max(12px, env(safe-area-inset-right)); }
+  .q-toast-viewport[data-position$="left"] { left: max(12px, env(safe-area-inset-left)); }
+  .q-toast-viewport[data-position$="center"] { left: 50%; transform: translateX(-50%); }
+  .q-toast-viewport:empty { pointer-events: none; }
+  @media (prefers-reduced-motion: reduce) { .q-toast { animation: none !important; transition: none !important; } }
+}
+@keyframes q-toast-enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }

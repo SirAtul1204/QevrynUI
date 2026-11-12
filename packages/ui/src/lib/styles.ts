@@ -1,0 +1,2 @@
+export const focusRing = 'q:focus-visible:outline-2 q:focus-visible:outline-offset-3 q:focus-visible:outline-ring';
+export const fieldStyles = 'q:block q:w-full q:box-border q:rounded-xl q:border q:border-solid q:border-border q:bg-control q:px-3.5 q:py-2.5 q:text-sm q:text-foreground q:placeholder:text-muted q:transition-colors q:disabled:cursor-not-allowed q:disabled:opacity-50 q:aria-invalid:border-danger q:focus-visible:border-ring';

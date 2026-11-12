@@ -1,0 +1,17 @@
+import { forwardRef, type ComponentRef } from 'react';
+import * as Primitive from '@radix-ui/react-dialog';
+import { Dialog, DialogTrigger, DialogClose, DialogTitle, DialogDescription, DialogHeader, DialogBody, DialogFooter, OverlayPanel, type DialogProps, type DialogContentProps } from './dialog';
+export { type DialogTriggerProps as DrawerTriggerProps, type DialogCloseProps as DrawerCloseProps, type DialogTitleProps as DrawerTitleProps, type DialogDescriptionProps as DrawerDescriptionProps, type DialogHeaderProps as DrawerHeaderProps, type DialogBodyProps as DrawerBodyProps, type DialogFooterProps as DrawerFooterProps } from './dialog';
+export type DrawerProps = DialogProps;
+export type DrawerSide = 'left' | 'right' | 'top' | 'bottom';
+export type DrawerContentProps = DialogContentProps & { side?: DrawerSide };
+export const Drawer = Dialog;
+export const DrawerTrigger = DialogTrigger;
+export const DrawerClose = DialogClose;
+export const DrawerTitle = DialogTitle;
+export const DrawerDescription = DialogDescription;
+export const DrawerHeader = DialogHeader;
+export const DrawerBody = DialogBody;
+export const DrawerFooter = DialogFooter;
+export const DrawerContent = forwardRef<ComponentRef<typeof Primitive.Content>, DrawerContentProps>(({ side = 'right', closeLabel = 'Close drawer', ...props }, ref) => <OverlayPanel {...props} ref={ref} edge={side} closeLabel={closeLabel} />);
+DrawerContent.displayName = 'DrawerContent';

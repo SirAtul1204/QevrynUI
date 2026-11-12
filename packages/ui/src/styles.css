@@ -1,0 +1,170 @@
+/* No global preflight: importing the library does not reset a consumer app. */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme) prefix(q);
+@import "tailwindcss/utilities.css" layer(utilities) prefix(q);
+@import "./layout.css";
+@import "./messages.css";
+@import "./overlays.css";
+@source "./components";
+@source "./lib";
+
+@theme inline {
+  --color-canvas: var(--qv-canvas);
+  --color-surface: var(--qv-surface);
+  --color-control: var(--qv-control);
+  --color-foreground: var(--qv-foreground);
+  --color-muted: var(--qv-muted);
+  --color-border: var(--qv-border);
+  --color-pink: var(--qv-pink);
+  --color-purple: var(--qv-purple);
+  --color-on-accent: var(--qv-on-accent);
+  --color-ring: var(--qv-purple);
+  --color-danger: var(--qv-danger);
+  --color-success: var(--qv-success);
+  --color-warning: var(--qv-warning);
+  --color-info: var(--qv-info);
+  --shadow-satin: 0 12px 32px var(--qv-shadow);
+  --shadow-glow: 0 5px 20px color-mix(in srgb, var(--qv-purple) 22%, transparent);
+}
+
+@layer components {
+  .q-theme {
+    --qv-canvas: #110e18;
+    --qv-surface: #1d1728;
+    --qv-control: #14101c;
+    --qv-foreground: #f6ecff;
+    --qv-muted: #bcb0cd;
+    --qv-border: #51425f;
+    --qv-pink: #f58aca;
+    --qv-purple: #aa8bff;
+    --qv-on-accent: #291337;
+    --qv-danger: #ff9cab;
+    --qv-success: #8fdfbc;
+    --qv-warning: #f4cc7a;
+    --qv-info: #93c9ff;
+    --qv-shadow: #00000030;
+    color-scheme: dark;
+    font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+    color: var(--qv-foreground);
+    line-height: 1.5;
+  }
+  .q-theme[data-theme="light"] {
+    --qv-canvas: #f6effa;
+    --qv-surface: #fffaff;
+    --qv-control: #ffffff;
+    --qv-foreground: #2c1a3b;
+    --qv-muted: #6c587c;
+    --qv-border: #c6b1d4;
+    --qv-pink: #a32776;
+    --qv-purple: #6741b8;
+    --qv-on-accent: #ffffff;
+    --qv-danger: #b42342;
+    --qv-success: #14664c;
+    --qv-warning: #85530d;
+    --qv-info: #235b9b;
+    --qv-shadow: #32154512;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: light) {
+    .q-theme[data-theme="system"] {
+      --qv-canvas: #f6effa;
+      --qv-surface: #fffaff;
+      --qv-control: #ffffff;
+      --qv-foreground: #2c1a3b;
+      --qv-muted: #6c587c;
+      --qv-border: #c6b1d4;
+      --qv-pink: #a32776;
+      --qv-purple: #6741b8;
+      --qv-on-accent: #ffffff;
+      --qv-danger: #b42342;
+      --qv-success: #14664c;
+      --qv-warning: #85530d;
+      --qv-info: #235b9b;
+      --qv-shadow: #32154512;
+      color-scheme: light;
+    }
+  }
+  .q-theme :where(button, input, textarea, select) { font-family: inherit; }
+  .q-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 3px;
+    width: 5px;
+    height: 9px;
+    border: solid var(--qv-on-accent);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .q-checkbox:indeterminate::after {
+    content: '';
+    position: absolute;
+    inset: 8px 4px auto;
+    height: 2px;
+    background: var(--qv-on-accent);
+    border: 0;
+    transform: none;
+  }
+  .q-dropdown-content {
+    background: linear-gradient(145deg, color-mix(in srgb, var(--qv-purple) 7%, var(--qv-surface)), var(--qv-surface) 65%);
+  }
+  .q-dropdown-mark {
+    border: solid currentColor;
+    border-width: 0 2px 2px 0;
+  }
+  .q-spinner { animation: q-spin 0.8s linear infinite; }
+  .q-accordion {
+    background:
+      linear-gradient(135deg, var(--qv-surface), var(--qv-control)) padding-box,
+      linear-gradient(135deg, var(--qv-border), color-mix(in srgb, var(--qv-purple) 24%, var(--qv-border)), var(--qv-border)) border-box;
+  }
+  .q-accordion-item { background: transparent; }
+  .q-accordion-item[data-state="open"] {
+    background: linear-gradient(115deg, color-mix(in srgb, var(--qv-purple) 10%, var(--qv-surface)), color-mix(in srgb, var(--qv-pink) 3%, var(--qv-surface)) 70%);
+  }
+  .q-accordion-item[data-state="open"]::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 2px;
+    background: linear-gradient(var(--qv-pink), var(--qv-purple));
+    box-shadow: 0 0 14px color-mix(in srgb, var(--qv-pink) 35%, transparent);
+    pointer-events: none;
+  }
+  .q-accordion-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    inset: auto 20px 0;
+    height: 1px;
+    background: linear-gradient(90deg, color-mix(in srgb, var(--qv-purple) 30%, var(--qv-border)), var(--qv-border), color-mix(in srgb, var(--qv-border) 40%, transparent));
+    pointer-events: none;
+  }
+  .q-accordion-item[data-variant="outline"] { background: var(--qv-canvas); }
+  .q-accordion-item[data-variant="outline"][data-state="open"] { background: color-mix(in srgb, var(--qv-purple) 5%, var(--qv-canvas)); }
+  .q-accordion-icon, .q-accordion-indicator {
+    background: color-mix(in srgb, var(--qv-purple) 9%, var(--qv-control));
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--qv-purple) 22%, var(--qv-border));
+  }
+  .q-accordion-trigger[data-state="open"] .q-accordion-icon,
+  .q-accordion-trigger[data-state="open"] .q-accordion-indicator {
+    color: var(--qv-pink);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--qv-pink) 14%, var(--qv-control)), color-mix(in srgb, var(--qv-purple) 14%, var(--qv-control)));
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--qv-pink) 35%, var(--qv-border)), 0 0 16px color-mix(in srgb, var(--qv-purple) 12%, transparent);
+  }
+  .q-accordion-body::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: 1px;
+    background: linear-gradient(90deg, color-mix(in srgb, var(--qv-pink) 55%, transparent), color-mix(in srgb, var(--qv-purple) 20%, transparent), transparent);
+  }
+  .q-accordion-content[data-state="open"] { animation: q-expand 180ms ease-out; }
+  .q-accordion-content[data-state="closed"] { animation: q-collapse 180ms ease-out; }
+  @media (prefers-reduced-motion: reduce) {
+    .q-spinner, .q-accordion-content { animation: none !important; }
+    .q-theme :where(button, a, input, textarea, select, [data-state]) { transition: none !important; }
+  }
+}
+@keyframes q-spin { to { transform: rotate(360deg); } }
+@keyframes q-expand { from { height: 0; } to { height: var(--radix-accordion-content-height); } }
+@keyframes q-collapse { from { height: var(--radix-accordion-content-height); } to { height: 0; } }

@@ -1,0 +1,209 @@
+/* Mobile-first layout rules. Keep these in components so Tailwind utilities override them. */
+@layer components {
+  .q-layout {
+    --q-layout-p-base: initial;
+    --q-layout-p-sm: initial;
+    --q-layout-p-md: initial;
+    --q-layout-p-lg: initial;
+    --q-layout-p-xl: initial;
+    --q-layout-p-2xl: initial;
+    --q-layout-px-base: initial;
+    --q-layout-px-sm: initial;
+    --q-layout-px-md: initial;
+    --q-layout-px-lg: initial;
+    --q-layout-px-xl: initial;
+    --q-layout-px-2xl: initial;
+    --q-layout-py-base: initial;
+    --q-layout-py-sm: initial;
+    --q-layout-py-md: initial;
+    --q-layout-py-lg: initial;
+    --q-layout-py-xl: initial;
+    --q-layout-py-2xl: initial;
+    --q-layout-display-base: initial;
+    --q-layout-display-sm: initial;
+    --q-layout-display-md: initial;
+    --q-layout-display-lg: initial;
+    --q-layout-display-xl: initial;
+    --q-layout-display-2xl: initial;
+    --q-layout-direction-base: initial;
+    --q-layout-direction-sm: initial;
+    --q-layout-direction-md: initial;
+    --q-layout-direction-lg: initial;
+    --q-layout-direction-xl: initial;
+    --q-layout-direction-2xl: initial;
+    --q-layout-gap-base: initial;
+    --q-layout-gap-sm: initial;
+    --q-layout-gap-md: initial;
+    --q-layout-gap-lg: initial;
+    --q-layout-gap-xl: initial;
+    --q-layout-gap-2xl: initial;
+    --q-layout-row-gap-base: initial;
+    --q-layout-row-gap-sm: initial;
+    --q-layout-row-gap-md: initial;
+    --q-layout-row-gap-lg: initial;
+    --q-layout-row-gap-xl: initial;
+    --q-layout-row-gap-2xl: initial;
+    --q-layout-column-gap-base: initial;
+    --q-layout-column-gap-sm: initial;
+    --q-layout-column-gap-md: initial;
+    --q-layout-column-gap-lg: initial;
+    --q-layout-column-gap-xl: initial;
+    --q-layout-column-gap-2xl: initial;
+    --q-layout-align-base: initial;
+    --q-layout-align-sm: initial;
+    --q-layout-align-md: initial;
+    --q-layout-align-lg: initial;
+    --q-layout-align-xl: initial;
+    --q-layout-align-2xl: initial;
+    --q-layout-justify-base: initial;
+    --q-layout-justify-sm: initial;
+    --q-layout-justify-md: initial;
+    --q-layout-justify-lg: initial;
+    --q-layout-justify-xl: initial;
+    --q-layout-justify-2xl: initial;
+    --q-layout-wrap-base: initial;
+    --q-layout-wrap-sm: initial;
+    --q-layout-wrap-md: initial;
+    --q-layout-wrap-lg: initial;
+    --q-layout-wrap-xl: initial;
+    --q-layout-wrap-2xl: initial;
+    --q-layout-columns-base: initial;
+    --q-layout-columns-sm: initial;
+    --q-layout-columns-md: initial;
+    --q-layout-columns-lg: initial;
+    --q-layout-columns-xl: initial;
+    --q-layout-columns-2xl: initial;
+    --q-layout-col-span-base: initial;
+    --q-layout-col-span-sm: initial;
+    --q-layout-col-span-md: initial;
+    --q-layout-col-span-lg: initial;
+    --q-layout-col-span-xl: initial;
+    --q-layout-col-span-2xl: initial;
+    --q-layout-row-span-base: initial;
+    --q-layout-row-span-sm: initial;
+    --q-layout-row-span-md: initial;
+    --q-layout-row-span-lg: initial;
+    --q-layout-row-span-xl: initial;
+    --q-layout-row-span-2xl: initial;
+    --q-layout-max-width-base: initial;
+    --q-layout-max-width-sm: initial;
+    --q-layout-max-width-md: initial;
+    --q-layout-max-width-lg: initial;
+    --q-layout-max-width-xl: initial;
+    --q-layout-max-width-2xl: initial;
+    --q-layout-ratio-base: initial;
+    --q-layout-ratio-sm: initial;
+    --q-layout-ratio-md: initial;
+    --q-layout-ratio-lg: initial;
+    --q-layout-ratio-xl: initial;
+    --q-layout-ratio-2xl: initial;
+  }
+  .q-layout-flex { display: flex; }
+  .q-layout-grid { display: grid; }
+    .q-layout-p { padding: var(--q-layout-p-base, 0px); }
+    .q-layout-px { padding-inline: var(--q-layout-px-base, var(--q-layout-p-base, 0px)); }
+    .q-layout-py { padding-block: var(--q-layout-py-base, var(--q-layout-p-base, 0px)); }
+    .q-layout-display { display: var(--q-layout-display-base, block); }
+    .q-layout-direction { flex-direction: var(--q-layout-direction-base, row); }
+    .q-layout-gap { gap: var(--q-layout-gap-base, 0px); }
+    .q-layout-row-gap { row-gap: var(--q-layout-row-gap-base, var(--q-layout-gap-base, 0px)); }
+    .q-layout-column-gap { column-gap: var(--q-layout-column-gap-base, var(--q-layout-gap-base, 0px)); }
+    .q-layout-align { align-items: var(--q-layout-align-base, stretch); }
+    .q-layout-justify { justify-content: var(--q-layout-justify-base, flex-start); }
+    .q-layout-wrap { flex-wrap: var(--q-layout-wrap-base, nowrap); }
+    .q-layout-columns { grid-template-columns: var(--q-layout-columns-base, minmax(0, 1fr)); }
+    .q-layout-col-span { grid-column: var(--q-layout-col-span-base, auto); }
+    .q-layout-row-span { grid-row: var(--q-layout-row-span-base, auto); }
+    .q-layout-max-width { max-width: var(--q-layout-max-width-base, 80rem); }
+    .q-layout-ratio { aspect-ratio: var(--q-layout-ratio-base, 16 / 9); }
+  @media (min-width: 640px) {
+    .q-layout-p { padding: var(--q-layout-p-sm, var(--q-layout-p-base, 0px)); }
+    .q-layout-px { padding-inline: var(--q-layout-px-sm, var(--q-layout-px-base, var(--q-layout-p-sm, var(--q-layout-p-base, 0px)))); }
+    .q-layout-py { padding-block: var(--q-layout-py-sm, var(--q-layout-py-base, var(--q-layout-p-sm, var(--q-layout-p-base, 0px)))); }
+    .q-layout-display { display: var(--q-layout-display-sm, var(--q-layout-display-base, block)); }
+    .q-layout-direction { flex-direction: var(--q-layout-direction-sm, var(--q-layout-direction-base, row)); }
+    .q-layout-gap { gap: var(--q-layout-gap-sm, var(--q-layout-gap-base, 0px)); }
+    .q-layout-row-gap { row-gap: var(--q-layout-row-gap-sm, var(--q-layout-row-gap-base, var(--q-layout-gap-sm, var(--q-layout-gap-base, 0px)))); }
+    .q-layout-column-gap { column-gap: var(--q-layout-column-gap-sm, var(--q-layout-column-gap-base, var(--q-layout-gap-sm, var(--q-layout-gap-base, 0px)))); }
+    .q-layout-align { align-items: var(--q-layout-align-sm, var(--q-layout-align-base, stretch)); }
+    .q-layout-justify { justify-content: var(--q-layout-justify-sm, var(--q-layout-justify-base, flex-start)); }
+    .q-layout-wrap { flex-wrap: var(--q-layout-wrap-sm, var(--q-layout-wrap-base, nowrap)); }
+    .q-layout-columns { grid-template-columns: var(--q-layout-columns-sm, var(--q-layout-columns-base, minmax(0, 1fr))); }
+    .q-layout-col-span { grid-column: var(--q-layout-col-span-sm, var(--q-layout-col-span-base, auto)); }
+    .q-layout-row-span { grid-row: var(--q-layout-row-span-sm, var(--q-layout-row-span-base, auto)); }
+    .q-layout-max-width { max-width: var(--q-layout-max-width-sm, var(--q-layout-max-width-base, 80rem)); }
+    .q-layout-ratio { aspect-ratio: var(--q-layout-ratio-sm, var(--q-layout-ratio-base, 16 / 9)); }
+  }
+  @media (min-width: 768px) {
+    .q-layout-p { padding: var(--q-layout-p-md, var(--q-layout-p-sm, var(--q-layout-p-base, 0px))); }
+    .q-layout-px { padding-inline: var(--q-layout-px-md, var(--q-layout-px-sm, var(--q-layout-px-base, var(--q-layout-p-md, var(--q-layout-p-sm, var(--q-layout-p-base, 0px)))))); }
+    .q-layout-py { padding-block: var(--q-layout-py-md, var(--q-layout-py-sm, var(--q-layout-py-base, var(--q-layout-p-md, var(--q-layout-p-sm, var(--q-layout-p-base, 0px)))))); }
+    .q-layout-display { display: var(--q-layout-display-md, var(--q-layout-display-sm, var(--q-layout-display-base, block))); }
+    .q-layout-direction { flex-direction: var(--q-layout-direction-md, var(--q-layout-direction-sm, var(--q-layout-direction-base, row))); }
+    .q-layout-gap { gap: var(--q-layout-gap-md, var(--q-layout-gap-sm, var(--q-layout-gap-base, 0px))); }
+    .q-layout-row-gap { row-gap: var(--q-layout-row-gap-md, var(--q-layout-row-gap-sm, var(--q-layout-row-gap-base, var(--q-layout-gap-md, var(--q-layout-gap-sm, var(--q-layout-gap-base, 0px)))))); }
+    .q-layout-column-gap { column-gap: var(--q-layout-column-gap-md, var(--q-layout-column-gap-sm, var(--q-layout-column-gap-base, var(--q-layout-gap-md, var(--q-layout-gap-sm, var(--q-layout-gap-base, 0px)))))); }
+    .q-layout-align { align-items: var(--q-layout-align-md, var(--q-layout-align-sm, var(--q-layout-align-base, stretch))); }
+    .q-layout-justify { justify-content: var(--q-layout-justify-md, var(--q-layout-justify-sm, var(--q-layout-justify-base, flex-start))); }
+    .q-layout-wrap { flex-wrap: var(--q-layout-wrap-md, var(--q-layout-wrap-sm, var(--q-layout-wrap-base, nowrap))); }
+    .q-layout-columns { grid-template-columns: var(--q-layout-columns-md, var(--q-layout-columns-sm, var(--q-layout-columns-base, minmax(0, 1fr)))); }
+    .q-layout-col-span { grid-column: var(--q-layout-col-span-md, var(--q-layout-col-span-sm, var(--q-layout-col-span-base, auto))); }
+    .q-layout-row-span { grid-row: var(--q-layout-row-span-md, var(--q-layout-row-span-sm, var(--q-layout-row-span-base, auto))); }
+    .q-layout-max-width { max-width: var(--q-layout-max-width-md, var(--q-layout-max-width-sm, var(--q-layout-max-width-base, 80rem))); }
+    .q-layout-ratio { aspect-ratio: var(--q-layout-ratio-md, var(--q-layout-ratio-sm, var(--q-layout-ratio-base, 16 / 9))); }
+  }
+  @media (min-width: 1024px) {
+    .q-layout-p { padding: var(--q-layout-p-lg, var(--q-layout-p-md, var(--q-layout-p-sm, var(--q-layout-p-base, 0px)))); }
+    .q-layout-px { padding-inline: var(--q-layout-px-lg, var(--q-layout-px-md, var(--q-layout-px-sm, var(--q-layout-px-base, var(--q-layout-p-lg, var(--q-layout-p-md, var(--q-layout-p-sm, var(--q-layout-p-base, 0px)))))))); }
+    .q-layout-py { padding-block: var(--q-layout-py-lg, var(--q-layout-py-md, var(--q-layout-py-sm, var(--q-layout-py-base, var(--q-layout-p-lg, var(--q-layout-p-md, var(--q-layout-p-sm, var(--q-layout-p-base, 0px)))))))); }
+    .q-layout-display { display: var(--q-layout-display-lg, var(--q-layout-display-md, var(--q-layout-display-sm, var(--q-layout-display-base, block)))); }
+    .q-layout-direction { flex-direction: var(--q-layout-direction-lg, var(--q-layout-direction-md, var(--q-layout-direction-sm, var(--q-layout-direction-base, row)))); }
+    .q-layout-gap { gap: var(--q-layout-gap-lg, var(--q-layout-gap-md, var(--q-layout-gap-sm, var(--q-layout-gap-base, 0px)))); }
+    .q-layout-row-gap { row-gap: var(--q-layout-row-gap-lg, var(--q-layout-row-gap-md, var(--q-layout-row-gap-sm, var(--q-layout-row-gap-base, var(--q-layout-gap-lg, var(--q-layout-gap-md, var(--q-layout-gap-sm, var(--q-layout-gap-base, 0px)))))))); }
+    .q-layout-column-gap { column-gap: var(--q-layout-column-gap-lg, var(--q-layout-column-gap-md, var(--q-layout-column-gap-sm, var(--q-layout-column-gap-base, var(--q-layout-gap-lg, var(--q-layout-gap-md, var(--q-layout-gap-sm, var(--q-layout-gap-base, 0px)))))))); }
+    .q-layout-align { align-items: var(--q-layout-align-lg, var(--q-layout-align-md, var(--q-layout-align-sm, var(--q-layout-align-base, stretch)))); }
+    .q-layout-justify { justify-content: var(--q-layout-justify-lg, var(--q-layout-justify-md, var(--q-layout-justify-sm, var(--q-layout-justify-base, flex-start)))); }
+    .q-layout-wrap { flex-wrap: var(--q-layout-wrap-lg, var(--q-layout-wrap-md, var(--q-layout-wrap-sm, var(--q-layout-wrap-base, nowrap)))); }
+    .q-layout-columns { grid-template-columns: var(--q-layout-columns-lg, var(--q-layout-columns-md, var(--q-layout-columns-sm, var(--q-layout-columns-base, minmax(0, 1fr))))); }
+    .q-layout-col-span { grid-column: var(--q-layout-col-span-lg, var(--q-layout-col-span-md, var(--q-layout-col-span-sm, var(--q-layout-col-span-base, auto)))); }
+    .q-layout-row-span { grid-row: var(--q-layout-row-span-lg, var(--q-layout-row-span-md, var(--q-layout-row-span-sm, var(--q-layout-row-span-base, auto)))); }
+    .q-layout-max-width { max-width: var(--q-layout-max-width-lg, var(--q-layout-max-width-md, var(--q-layout-max-width-sm, var(--q-layout-max-width-base, 80rem)))); }
+    .q-layout-ratio { aspect-ratio: var(--q-layout-ratio-lg, var(--q-layout-ratio-md, var(--q-layout-ratio-sm, var(--q-layout-ratio-base, 16 / 9)))); }
+  }
+  @media (min-width: 1280px) {
+    .q-layout-p { padding: var(--q-layout-p-xl, var(--q-layout-p-lg, var(--q-layout-p-md, var(--q-layout-p-sm, var(--q-layout-p-base, 0px))))); }
+    .q-layout-px { padding-inline: var(--q-layout-px-xl, var(--q-layout-px-lg, var(--q-layout-px-md, var(--q-layout-px-sm, var(--q-layout-px-base, var(--q-layout-p-xl, var(--q-layout-p-lg, var(--q-layout-p-md, var(--q-layout-p-sm, var(--q-layout-p-base, 0px)))))))))); }
+    .q-layout-py { padding-block: var(--q-layout-py-xl, var(--q-layout-py-lg, var(--q-layout-py-md, var(--q-layout-py-sm, var(--q-layout-py-base, var(--q-layout-p-xl, var(--q-layout-p-lg, var(--q-layout-p-md, var(--q-layout-p-sm, var(--q-layout-p-base, 0px)))))))))); }
+    .q-layout-display { display: var(--q-layout-display-xl, var(--q-layout-display-lg, var(--q-layout-display-md, var(--q-layout-display-sm, var(--q-layout-display-base, block))))); }
+    .q-layout-direction { flex-direction: var(--q-layout-direction-xl, var(--q-layout-direction-lg, var(--q-layout-direction-md, var(--q-layout-direction-sm, var(--q-layout-direction-base, row))))); }
+    .q-layout-gap { gap: var(--q-layout-gap-xl, var(--q-layout-gap-lg, var(--q-layout-gap-md, var(--q-layout-gap-sm, var(--q-layout-gap-base, 0px))))); }
+    .q-layout-row-gap { row-gap: var(--q-layout-row-gap-xl, var(--q-layout-row-gap-lg, var(--q-layout-row-gap-md, var(--q-layout-row-gap-sm, var(--q-layout-row-gap-base, var(--q-layout-gap-xl, var(--q-layout-gap-lg, var(--q-layout-gap-md, var(--q-layout-gap-sm, var(--q-layout-gap-base, 0px)))))))))); }
+    .q-layout-column-gap { column-gap: var(--q-layout-column-gap-xl, var(--q-layout-column-gap-lg, var(--q-layout-column-gap-md, var(--q-layout-column-gap-sm, var(--q-layout-column-gap-base, var(--q-layout-gap-xl, var(--q-layout-gap-lg, var(--q-layout-gap-md, var(--q-layout-gap-sm, var(--q-layout-gap-base, 0px)))))))))); }
+    .q-layout-align { align-items: var(--q-layout-align-xl, var(--q-layout-align-lg, var(--q-layout-align-md, var(--q-layout-align-sm, var(--q-layout-align-base, stretch))))); }
+    .q-layout-justify { justify-content: var(--q-layout-justify-xl, var(--q-layout-justify-lg, var(--q-layout-justify-md, var(--q-layout-justify-sm, var(--q-layout-justify-base, flex-start))))); }
+    .q-layout-wrap { flex-wrap: var(--q-layout-wrap-xl, var(--q-layout-wrap-lg, var(--q-layout-wrap-md, var(--q-layout-wrap-sm, var(--q-layout-wrap-base, nowrap))))); }
+    .q-layout-columns { grid-template-columns: var(--q-layout-columns-xl, var(--q-layout-columns-lg, var(--q-layout-columns-md, var(--q-layout-columns-sm, var(--q-layout-columns-base, minmax(0, 1fr)))))); }
+    .q-layout-col-span { grid-column: var(--q-layout-col-span-xl, var(--q-layout-col-span-lg, var(--q-layout-col-span-md, var(--q-layout-col-span-sm, var(--q-layout-col-span-base, auto))))); }
+    .q-layout-row-span { grid-row: var(--q-layout-row-span-xl, var(--q-layout-row-span-lg, var(--q-layout-row-span-md, var(--q-layout-row-span-sm, var(--q-layout-row-span-base, auto))))); }
+    .q-layout-max-width { max-width: var(--q-layout-max-width-xl, var(--q-layout-max-width-lg, var(--q-layout-max-width-md, var(--q-layout-max-width-sm, var(--q-layout-max-width-base, 80rem))))); }
+    .q-layout-ratio { aspect-ratio: var(--q-layout-ratio-xl, var(--q-layout-ratio-lg, var(--q-layout-ratio-md, var(--q-layout-ratio-sm, var(--q-layout-ratio-base, 16 / 9))))); }
+  }
+  @media (min-width: 1536px) {
+    .q-layout-p { padding: var(--q-layout-p-2xl, var(--q-layout-p-xl, var(--q-layout-p-lg, var(--q-layout-p-md, var(--q-layout-p-sm, var(--q-layout-p-base, 0px)))))); }
+    .q-layout-px { padding-inline: var(--q-layout-px-2xl, var(--q-layout-px-xl, var(--q-layout-px-lg, var(--q-layout-px-md, var(--q-layout-px-sm, var(--q-layout-px-base, var(--q-layout-p-2xl, var(--q-layout-p-xl, var(--q-layout-p-lg, var(--q-layout-p-md, var(--q-layout-p-sm, var(--q-layout-p-base, 0px)))))))))))); }
+    .q-layout-py { padding-block: var(--q-layout-py-2xl, var(--q-layout-py-xl, var(--q-layout-py-lg, var(--q-layout-py-md, var(--q-layout-py-sm, var(--q-layout-py-base, var(--q-layout-p-2xl, var(--q-layout-p-xl, var(--q-layout-p-lg, var(--q-layout-p-md, var(--q-layout-p-sm, var(--q-layout-p-base, 0px)))))))))))); }
+    .q-layout-display { display: var(--q-layout-display-2xl, var(--q-layout-display-xl, var(--q-layout-display-lg, var(--q-layout-display-md, var(--q-layout-display-sm, var(--q-layout-display-base, block)))))); }
+    .q-layout-direction { flex-direction: var(--q-layout-direction-2xl, var(--q-layout-direction-xl, var(--q-layout-direction-lg, var(--q-layout-direction-md, var(--q-layout-direction-sm, var(--q-layout-direction-base, row)))))); }
+    .q-layout-gap { gap: var(--q-layout-gap-2xl, var(--q-layout-gap-xl, var(--q-layout-gap-lg, var(--q-layout-gap-md, var(--q-layout-gap-sm, var(--q-layout-gap-base, 0px)))))); }
+    .q-layout-row-gap { row-gap: var(--q-layout-row-gap-2xl, var(--q-layout-row-gap-xl, var(--q-layout-row-gap-lg, var(--q-layout-row-gap-md, var(--q-layout-row-gap-sm, var(--q-layout-row-gap-base, var(--q-layout-gap-2xl, var(--q-layout-gap-xl, var(--q-layout-gap-lg, var(--q-layout-gap-md, var(--q-layout-gap-sm, var(--q-layout-gap-base, 0px)))))))))))); }
+    .q-layout-column-gap { column-gap: var(--q-layout-column-gap-2xl, var(--q-layout-column-gap-xl, var(--q-layout-column-gap-lg, var(--q-layout-column-gap-md, var(--q-layout-column-gap-sm, var(--q-layout-column-gap-base, var(--q-layout-gap-2xl, var(--q-layout-gap-xl, var(--q-layout-gap-lg, var(--q-layout-gap-md, var(--q-layout-gap-sm, var(--q-layout-gap-base, 0px)))))))))))); }
+    .q-layout-align { align-items: var(--q-layout-align-2xl, var(--q-layout-align-xl, var(--q-layout-align-lg, var(--q-layout-align-md, var(--q-layout-align-sm, var(--q-layout-align-base, stretch)))))); }
+    .q-layout-justify { justify-content: var(--q-layout-justify-2xl, var(--q-layout-justify-xl, var(--q-layout-justify-lg, var(--q-layout-justify-md, var(--q-layout-justify-sm, var(--q-layout-justify-base, flex-start)))))); }
+    .q-layout-wrap { flex-wrap: var(--q-layout-wrap-2xl, var(--q-layout-wrap-xl, var(--q-layout-wrap-lg, var(--q-layout-wrap-md, var(--q-layout-wrap-sm, var(--q-layout-wrap-base, nowrap)))))); }
+    .q-layout-columns { grid-template-columns: var(--q-layout-columns-2xl, var(--q-layout-columns-xl, var(--q-layout-columns-lg, var(--q-layout-columns-md, var(--q-layout-columns-sm, var(--q-layout-columns-base, minmax(0, 1fr))))))); }
+    .q-layout-col-span { grid-column: var(--q-layout-col-span-2xl, var(--q-layout-col-span-xl, var(--q-layout-col-span-lg, var(--q-layout-col-span-md, var(--q-layout-col-span-sm, var(--q-layout-col-span-base, auto)))))); }
+    .q-layout-row-span { grid-row: var(--q-layout-row-span-2xl, var(--q-layout-row-span-xl, var(--q-layout-row-span-lg, var(--q-layout-row-span-md, var(--q-layout-row-span-sm, var(--q-layout-row-span-base, auto)))))); }
+    .q-layout-max-width { max-width: var(--q-layout-max-width-2xl, var(--q-layout-max-width-xl, var(--q-layout-max-width-lg, var(--q-layout-max-width-md, var(--q-layout-max-width-sm, var(--q-layout-max-width-base, 80rem)))))); }
+    .q-layout-ratio { aspect-ratio: var(--q-layout-ratio-2xl, var(--q-layout-ratio-xl, var(--q-layout-ratio-lg, var(--q-layout-ratio-md, var(--q-layout-ratio-sm, var(--q-layout-ratio-base, 16 / 9)))))); }
+  }
+}
