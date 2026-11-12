@@ -4,7 +4,7 @@
 
 Live preview: [qevryn-ui-preview.vercel.app](https://qevryn-ui-preview.vercel.app).
 
-The private [GitHub repository](https://github.com/SirAtul1204/QevrynUI) is connected to the Vercel project `qevryn-ui-preview`. Pushes to `main` deploy production; pull requests receive preview deployments. GitHub Actions runs the workspace build, type checks, and tests on pushes and pull requests.
+The public [GitHub repository](https://github.com/SirAtul1204/QevrynUI) is connected to the Vercel project `qevryn-ui-preview`. Pushes to `main` deploy production; pull requests receive preview deployments. GitHub Actions runs the workspace build, type checks, and tests on pushes and pull requests.
 
 Deploy from the repository root. The root `vercel.json` builds `@qevryn/ui` before `@qevryn/preview` through Turborepo and publishes `apps/preview/dist`. Keep the Vercel project Root Directory at the repository root. Use Node.js 24.x in project settings and enable `ENABLE_EXPERIMENTAL_COREPACK=1` for builds so the pinned pnpm version is honored. The install command uses Corepack with the frozen lockfile.
 
