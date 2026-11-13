@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "qevryn-ui",
+  "version": "0.1.0",
+  "description": "Discover Qevryn React components, exact usage, typed APIs, and responsive page recipes.",
+  "author": { "name": "Atul Singh" },
+  "license": "MIT",
+  "homepage": "https://qevryn-ui-preview.vercel.app",
+  "repository": "https://github.com/SirAtul1204/QevrynUI",
+  "keywords": ["react", "qevryn", "components", "tailwindcss", "mcp"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Qevryn UI",
+        "shortDescription": "Build with Qevryn components",
+        "longDescription": "Read-only component discovery, real TypeScript declarations, complete usage examples, React/Next.js setup, and responsive page recipes for @qevryn/ui. Runs locally over stdio without credentials or network access.",
+        "developerName": "Atul Singh",
+        "category": "Developer Tools",
+        "capabilities": ["Read"],
+        "brandColor": "#6741B8",
+        "brandColorDark": "#AA8BFF",
+        "logo": "./assets/icon.svg",
+        "composerIcon": "./assets/icon.svg",
+        "defaultPrompt": ["Build a responsive dashboard using Qevryn UI.", "Find Qevryn components and show their usage.", "Add accessible forms with Qevryn UI."]
+      }
+    }
+  }
+}

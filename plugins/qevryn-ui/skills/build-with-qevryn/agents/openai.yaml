@@ -1,0 +1,7 @@
+interface:
+  display_name: "Build with Qevryn UI"
+  short_description: "Discover components and compose accessible React pages"
+  default_prompt: "Build a responsive page with Qevryn UI using its actual components and APIs."
+  brand_color: "#6741B8"
+policy:
+  allow_implicit_invocation: true

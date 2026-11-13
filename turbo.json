@@ -3,6 +3,9 @@
   "globalDependencies": ["tsconfig.base.json"],
   "tasks": {
     "build": { "dependsOn": ["^build"], "outputs": ["dist/**"] },
+    "@qevryn/mcp#build": { "dependsOn": ["^build"], "cache": false, "outputs": [] },
+    "@qevryn/mcp#typecheck": { "dependsOn": ["build"], "outputs": [] },
+    "@qevryn/mcp#test": { "dependsOn": ["build"], "outputs": [] },
     "typecheck": { "dependsOn": ["^build"], "outputs": [] },
     "test": { "outputs": [] },
     "dev": { "cache": false, "persistent": true }

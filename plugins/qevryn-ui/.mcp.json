@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "qevryn": {
+      "command": "node",
+      "args": [
+        "${PLUGIN_ROOT}/server/index.mjs"
+      ]
+    }
+  }
+}

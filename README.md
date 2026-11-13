@@ -1,5 +1,16 @@
 # Qevryn UI
 
+## AI agent plugin
+
+The [Qevryn UI agent plugin](plugins/qevryn-ui/README.md) adds read-only component search, exact usage and declarations, React/Next.js setup, and page recipes. Its local MCP server and offline skill references document all 83 public exports in UI 0.1.0. Build a distributable archive with `pnpm pack:plugin`.
+
+```sh
+codex plugin marketplace add /absolute/path/to/QevrynUI
+codex plugin add qevryn-ui@qevryn
+```
+
+The plugin is self-contained and requires Node.js on the agent host. It does not require npm credentials or access to a consuming application's files. See its README for server-only setup in other MCP clients.
+
 ## Deploy the preview to Vercel
 
 Live preview: [qevryn-ui-preview.vercel.app](https://qevryn-ui-preview.vercel.app).
@@ -30,11 +41,13 @@ apps/
   preview/             @qevryn/preview — Vite component showcase
 packages/
   ui/                  @qevryn/ui — reusable basic components
+  mcp/                 @qevryn/mcp — agent catalog, server, and plugin build tools
     src/components/
     src/styles.css     scoped theme tokens and prefixed Tailwind utilities
     tests/
 turbo.json             task dependencies and local build cache
 pnpm-workspace.yaml    workspace packages
+plugins/qevryn-ui/     distributable local agent plugin, bundled server, and skill
 tsconfig.base.json     shared strict TypeScript settings
 ```
 

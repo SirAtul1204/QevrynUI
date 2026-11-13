@@ -1,0 +1,5 @@
+{
+  "name": "qevryn",
+  "interface": { "displayName": "Qevryn plugins" },
+  "plugins": [{ "name": "qevryn-ui", "source": { "source": "local", "path": "./plugins/qevryn-ui" } }]
+}
