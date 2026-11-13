@@ -65,7 +65,7 @@ Build results live in `packages/ui/dist` and `apps/preview/dist`. Generated file
 
 ## Use in another project
 
-Install the library in a React project:
+Install [@qevryn/ui](https://www.npmjs.com/package/@qevryn/ui) in a React project:
 
 ```sh
 npm install @qevryn/ui
